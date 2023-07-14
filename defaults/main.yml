@@ -1,2 +1,5 @@
 ---
-# defaults file for ansible-vector
+vector_version: "0.21.0"
+vector_config_dir: /var/lib/vector
+clickhouse_server: "127.0.0.1"
+clickhouse_port: "8123"

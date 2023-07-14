@@ -1,2 +1,22 @@
 ---
-# vars file for ansible-vector
+vector_config:
+  data_dir: "{{ vector_config_dir }}"
+  sources:
+    demo_logs:
+      type: demo_logs
+      format: syslog
+  sinks:
+    to_clickhouse:
+      type: clickhouse
+      inputs:
+        - demo_logs
+      database: logs
+      endpoint: "http://{{ clickhouse_server }}:{{ clickhouse_port }}"
+      auth:
+        user: vector
+        password: password
+        strategy: basic
+      table: data_logs
+      compression: gzip
+      healthcheck: true
+      skip_unknown_fields: true

@@ -1,2 +1,8 @@
 ---
-# handlers file for ansible-vector
+- name: start-vector
+  become: true
+  ansible.builtin.service:
+    name: vector
+    state: started
+    daemon_reload: true
+  ignore_errors: "{{ ansible_check_mode }}"
