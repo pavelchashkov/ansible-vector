@@ -1,0 +1,9 @@
+---
+- name: Prepare
+  hosts: centos8
+  tasks:
+    - name: "Check wget for yum update" # noqa: fqcn[action-core]
+      become: true
+      ansible.builtin.file:
+        state: absent
+        path: /etc/yum.repos.d/

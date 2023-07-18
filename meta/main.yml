@@ -1,4 +1,6 @@
 galaxy_info:
+  role_name: vector
+  namespace: chashkov
   author: Pavel Chashkov
   description: This role install vector
   company: netology
@@ -32,6 +34,10 @@ galaxy_info:
       versions:
         - "7"
         - "8"
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
   # - name: SomePlatform
   #   versions:
   #   - all

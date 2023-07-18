@@ -1,0 +1,14 @@
+- name: Vector | Download deb
+  become: true
+  ansible.builtin.get_url:
+    url: "https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_amd64.deb"
+    dest: "./vector_{{ vector_version }}-1_amd64.deb"
+    mode: "0644"
+    timeout: 200
+- name: Vector | Install package
+  become: true
+  become_method: sudo
+  ansible.builtin.apt:
+    deb: "./vector_{{ vector_version }}-1_amd64.deb"
+    allow_downgrade: true
+  ignore_errors: "{{ ansible_check_mode }}"

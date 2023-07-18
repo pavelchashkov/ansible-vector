@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-vector" # noqa: fqcn[action-core]
+      include_role:
+        name: "ansible-vector"

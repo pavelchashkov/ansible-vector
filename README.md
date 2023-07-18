@@ -1,7 +1,7 @@
 Vector
 =========
 
-This role can install Vector on EL
+This role can install Vector on Centos and Ubuntu
 
 Role Variables
 --------------
